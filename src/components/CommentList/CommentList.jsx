@@ -4,13 +4,15 @@ import { CommentInfo } from '../CommentInfo/CommentInfo';
 import './CommentList.scss';
 
 export const CommentList = ({ comments }) => (
-  <React>
+  <div>
     {comments.length !== 0 ? (
       comments.map(comment => (
-        <CommentInfo comment={comment} key={comment.id} />
+        <div key={comment.id}>
+          <CommentInfo comment={comment} />
+        </div>
       ))
     ) : (
       <b data-cy="NoCommentsMessage">No comments yet</b>
     )}
-  </React>
+  </div>
 );
